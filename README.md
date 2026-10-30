@@ -33,6 +33,15 @@ pairs with the TV using the 6-character code the TV shows, and then sends key ev
   (`_androidtvremote2._tcp.`) and by a scan of the local /24, "Add IP", pairing, swipe to forget.
 - Reconnects by itself after four seconds when the connection drops.
 
+## Download
+
+Every push to `main` is built by GitHub Actions. Get the unsigned IPA from the [Releases page](../../releases):
+
+- [latest versioned release](../../releases/latest) - the stable one (versions follow [Semantic Versioning](https://semver.org/), see [CHANGELOG.md](CHANGELOG.md));
+- the [`nightly` pre-release](../../releases/tag/nightly) - the newest build of `main`, replaced on every push.
+
+The IPA is unsigned: install it on an iOS 6 device that has AppSync Unified, e.g. `ideviceinstaller -i TVRemote-<version>.ipa`. A `.sha256` file sits next to each IPA.
+
 ## Requirements
 
 - To run it: an iOS 6 device that can install unsigned apps, i.e. jailbroken with [AppSync Unified](https://github.com/akemin-dayo/AppSync) installed;

@@ -27,6 +27,7 @@ if [ "$1" = device ]; then
     xcrun clang -arch armv7 -miphoneos-version-min=6.0 -isysroot "$SDK93" "${FRAMEWORKS[@]}" -undefined dynamic_lookup \
         "${OBJS[@]}" -o build/device/Payload/TVRemote.app/TVRemote
     cp Info.plist res/*.png build/device/Payload/TVRemote.app/
+    cp LICENSE THIRD_PARTY_NOTICES.md build/device/Payload/TVRemote.app/
     (cd build/device && zip -q -r ../TVRemote.ipa Payload)
     echo "built build/TVRemote.ipa"
 else

@@ -1,3 +1,5 @@
+<img src="docs/icon.png" width="96" align="right" alt="TVRemote icon">
+
 # TV Remote
 
 A wood-and-plastic, skeuomorphic remote control for **Android TV / Google TV**, written for iPhones that are stuck on iOS 6 (developed for an iPhone 5, armv7).

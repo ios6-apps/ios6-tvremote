@@ -39,7 +39,7 @@ for p in (int(sys.argv[1]), int(sys.argv[1]) + 1):
 PY
 MOCK_PID=""
 # flowtest keeps its throw-away client identity in the "flowtest" defaults domain; remove it afterwards
-trap '[ -n "$MOCK_PID" ] && { kill "$MOCK_PID"; wait "$MOCK_PID"; } 2>/dev/null; defaults delete flowtest 2>/dev/null; true' EXIT
+trap '[ -n "$MOCK_PID" ] && { kill "$MOCK_PID" || true; wait "$MOCK_PID" || true; } 2>/dev/null; defaults delete flowtest 2>/dev/null; true' EXIT
 build/venv/bin/python -u tools/mock_tv.py --host 127.0.0.1 --port "$PORT" --name "Test TV" > "$B/mock.log" 2>&1 &
 MOCK_PID=$!
 for _ in $(seq 1 50); do grep -q "mock TV on" "$B/mock.log" 2>/dev/null && break; sleep 0.2; done
